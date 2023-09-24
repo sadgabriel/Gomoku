@@ -1,3 +1,3 @@
 # Gomoku
-The 2-palyers 15*15 size **gomoku game**.
-3*3, 4*4, long-moku not allowed.
+The 2-palyers **15x15 size gomoku game**.
+**3x3**, **4x4**, **overline** are not allowed.
