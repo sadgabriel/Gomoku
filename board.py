@@ -18,9 +18,12 @@ class Board():
                 self._grid[x][y] = 1
             else:               # if it is white turn
                 self._grid[x][y] = 2
+            self._update_restricted_zone(turn)
             return True
         else:                   # if the point which player click is not valid
             return False        # return False to do something for caller
+        
+        
 
     def check_end(self, x, y, turn):
         """
@@ -55,7 +58,7 @@ class Board():
                 cur_x -= line.direction[0]
                 cur_y -= line.direction[1]
             if line.length > 4:
-                print(line.length, line.direction, line.num_opened)
+                #print(line.length, line.direction, line.num_opened)
                 return True
         return False
             
@@ -74,7 +77,7 @@ class Board():
         
         return True
 
-    def update_restricted_zone(self, turn):
+    def _update_restricted_zone(self, turn):
         """
         Iterate every grid
         to check restricted condition
@@ -225,7 +228,6 @@ while running:
         test_board.render(screen)
         pygame.display.flip()
         win(a, b)
-    test_board.update_restricted_zone(turn)
     turn += 1
 
     # flip() the display to put your work on screen
