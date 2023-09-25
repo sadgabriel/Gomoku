@@ -35,11 +35,15 @@ while running:
             
             if board.put_stone(x, y, turn):
                 # stone putted successfully
-                turn += 1
                 
-                if board.check_end():
+                if board.check_end(x, y, turn):
                     # game end
-                    winner = turn % 2
+                    if turn % 2 == 1:
+                        winner = 1
+                    else:
+                        winner = 2
+                
+                turn += 1
         
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 3:
             # testing
